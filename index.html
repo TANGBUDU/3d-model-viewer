@@ -11,14 +11,20 @@
   </head>
   <body>
     <model-viewer src="model.glb"
-                  ios-src="model.usdz"           <!-- 没有就删掉这一行 -->
-                  camera-controls
-                  auto-rotate
-                  ar
-                  ar-modes="scene-viewer quick-look webxr"
-                  exposure="1.0"
+                  camera-controls            <!-- 允许拖拽旋转/缩放 -->
+                  auto-rotate                <!-- 自动旋转 -->
+                  autoplay                   <!-- 自动播放动画（如有） -->
+                  ar ar-modes="scene-viewer quick-look webxr"
                   environment-image="neutral"
-                  poster="poster.png">            <!-- 没有海报可删 -->
+                  exposure="1.0"
+                  shadow-intensity="0.4"
+                  dpr="1 2"                  <!-- 高分屏更清晰 -->
+                  camera-target="auto"       <!-- 自动对准模型中心 -->
+                  camera-orbit="0deg 75deg 2.2m"  <!-- 初始角度/距离，可改 -->
+                  field-of-view="30deg"
+                  min-field-of-view="15deg"
+                  max-field-of-view="60deg"
+                  interaction-prompt="none">
     </model-viewer>
   </body>
 </html>
